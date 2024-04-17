@@ -27,14 +27,10 @@ return {
 
             vim.api.nvim_create_autocmd({ "VimEnter" }, {
                 callback = function(ev)
-                    vim.notify("inside the starter callback")
                     if vim.fn.argc() == 1 and vim.fn.argv(0) == "." then
                         -- open starter if nvim was started with `nvim .`
-                        vim.notify("inside the if statement")
                         starter.open()
                         starter.refresh()
-                    else
-                        vim.notify("inside the else statement")
                     end
                 end
             })
