@@ -1,8 +1,42 @@
-function git_or_find_files()
+local bla = require("telescope.pickers.entry_display").create {
+    separator = " ",
+    items = {
+        { width = 30 },
+        { remaining = true },
+    },
+}
+
+local function getLastItem(str)
+    -- Split the string by '/'
+    local parts = {}
+    for part in string.gmatch(str, "[^/]+") do
+        table.insert(parts, part)
+    end
+    
+    -- Return the last item
+    return parts[#parts]
+end
+
+local function git_files_make_entry(entry)
+    return bla {
+        { getLastItem(entry) },
+        { entry },
+    }
+end
+
+local function git_or_find_files()
     local path = vim.loop.cwd() .. "/.git"
     local ok, err = vim.loop.fs_stat(path)
     if ok then
-        require("telescope.builtin").git_files()
+        require("telescope.builtin").git_files({
+            entry_maker = function(entry)
+                return {
+                    value = entry,
+                    display = git_files_make_entry(entry),
+                    ordinal = entry,
+                }
+            end,
+        })
     else
         require("telescope.builtin").find_files()
     end
@@ -15,7 +49,7 @@ local function liveGrepCurrentFileDir()
 end
 
 local function liveGrepIgnoreHidden()
-    require("telescope.builtin").live_grep({ additional_args = { "--hidden" }})
+    require("telescope.builtin").live_grep({ additional_args = { "--hidden" } })
 end
 
 return {
