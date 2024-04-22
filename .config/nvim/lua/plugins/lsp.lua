@@ -93,9 +93,9 @@ return {
                     vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, { desc = "Rename" })
                     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, { desc = "Code action" })
                     vim.keymap.set('n', 'gr', function() builtin.lsp_references() end, { desc = "Go to reference" })
-                    vim.keymap.set('n', '<space>cf', function()
-                        vim.lsp.buf.format { async = true }
-                    end, { desc = "Format code" })
+                    -- vim.keymap.set('n', '<space>cf', function()
+                    --     vim.lsp.buf.format { async = true }
+                    -- end, { desc = "Format code" })
                 end,
             })
         end
