@@ -16,11 +16,12 @@ opt.smartindent = true
 opt.tabstop = 4
 opt.undofile = true
 opt.undolevels = 10000
+opt.termguicolors = true
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })

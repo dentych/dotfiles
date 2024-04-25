@@ -1,8 +1,11 @@
 return {
-    {"morhetz/gruvbox"},
     {
-      "ray-x/lsp_signature.nvim",
-      event = "VeryLazy",
-      opts = {},
+        "morhetz/gruvbox",
+        priority = 1000,
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
     }
 }
