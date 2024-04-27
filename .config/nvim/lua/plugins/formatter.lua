@@ -5,10 +5,11 @@ return {
         formatters_by_ft = {
             sql = { "sql_formatter" },
             go = { "goimports" },
+            lua = { "stylua" },
         },
         formatters = {
             sql_formatter = {
-                args = { "-l", "postgresql"},
+                args = { "-l", "postgresql" },
             },
         },
         format_on_save = {
@@ -17,6 +18,6 @@ return {
         },
     },
     keys = {
-        { "<leader>cf", function() require('conform').format() end, desc = "Format file" },
+        { "<leader>cf", function() require('conform').format({ lsp_fallback = true }) end, desc = "Format file" },
     }
 }
