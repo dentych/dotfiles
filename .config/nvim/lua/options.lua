@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+-- Disable weird <C-c>o shortcuts for sql files, that are apparently built into neovim :exploding_brain:
+vim.g.omni_sql_no_default_maps = 1
+
 local opt = vim.opt
 
 opt.autowrite = true
@@ -20,8 +23,8 @@ opt.termguicolors = true
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
