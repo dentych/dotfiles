@@ -5,7 +5,11 @@ return {
 		config = function()
 			vim.cmd.colorscheme("gruvbox")
 
-			vim.api.nvim_set_hl(0, "Comment", { fg = "lightgray" })
+			vim.api.nvim_set_hl(0, "Comment", { link = "GruvboxFg0" })
+			-- Write same highlight methods as the three above, but without the hl- prefix
+			vim.api.nvim_set_hl(0, "LspReferenceText", { link = "GruvboxFg0" })
+			vim.api.nvim_set_hl(0, "LspReferenceRead", { link = "LspReferenceText" })
+			vim.api.nvim_set_hl(0, "LspReferenceWrite", { link = "LspReferenceText" })
 		end,
 	},
 	{

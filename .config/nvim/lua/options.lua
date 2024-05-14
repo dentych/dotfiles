@@ -20,6 +20,7 @@ opt.tabstop = 4
 opt.undofile = true
 opt.undolevels = 10000
 opt.termguicolors = true
+opt.updatetime = 1000
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
