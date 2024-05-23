@@ -21,6 +21,7 @@ opt.undofile = true
 opt.undolevels = 10000
 opt.termguicolors = true
 opt.updatetime = 1000
+opt.splitright = true
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
