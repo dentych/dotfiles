@@ -1,5 +1,7 @@
 if status is-interactive
-    zellij attach -c main
-    fzf --fish | source
+    if set -q ZELLIJ
+        zellij attach -c main
+    end
+    #fzf --fish | source
 end
 
