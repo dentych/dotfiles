@@ -7,6 +7,7 @@ return {
 			go = { "goimports" },
 			lua = { "stylua" },
 			graphql = { "prettierd" },
+			proto = { "buf" },
 		},
 		formatters = {
 			sql_formatter = {
