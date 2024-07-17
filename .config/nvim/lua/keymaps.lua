@@ -16,3 +16,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer" })
 
 vim.keymap.set("n", "<esc><esc>", "<cmd>noh<cr>", { desc = "Remove highlighting" })
+
+-- vim.keymap.set("n", "<leader>e", function()
+-- 	MiniFiles.open()
+-- end, { desc = "Open minifiles" })
