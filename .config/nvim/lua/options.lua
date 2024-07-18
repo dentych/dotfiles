@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 -- Disable weird <C-c>o shortcuts for sql files, that are apparently built into neovim :exploding_brain:
 vim.g.omni_sql_no_default_maps = 1
 
+-- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
