@@ -1,5 +1,6 @@
 -- global stuff
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Disable weird <C-c>o shortcuts for sql files, that are apparently built into neovim :exploding_brain:
 vim.g.omni_sql_no_default_maps = 1

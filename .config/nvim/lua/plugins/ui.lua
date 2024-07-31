@@ -50,9 +50,12 @@ return {
 	-- noice for cmdline, notifications and stuff
 	{
 		"folke/noice.nvim",
+		-- temporarily disabled as it caused flickering..
+		enabled = false,
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
 		},
 		opts = {
 			-- there are multiple plugins handling signature help. Disable noice's version here (I'm not sure which plugin does the handling now :D)
