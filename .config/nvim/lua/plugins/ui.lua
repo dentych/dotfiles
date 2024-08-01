@@ -50,8 +50,6 @@ return {
 	-- noice for cmdline, notifications and stuff
 	{
 		"folke/noice.nvim",
-		-- temporarily disabled as it caused flickering..
-		enabled = false,
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
