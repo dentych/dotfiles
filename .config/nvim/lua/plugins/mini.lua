@@ -9,6 +9,8 @@ return {
 			require("mini.bufremove").setup()
 			require("mini.ai").setup()
 			require("mini.indentscope").setup()
+
+			require("mini.starter").setup()
 		end,
 	},
 }

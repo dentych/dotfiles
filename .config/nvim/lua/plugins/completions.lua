@@ -36,6 +36,9 @@ return {
 						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 					end,
 				},
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
@@ -70,11 +73,10 @@ return {
 					end, { "i", "s" }),
 				}),
 				sources = cmp.config.sources({
-					{ name = "copilot", group_index = 2 },
-					{ name = "nvim_lsp", group_index = 2 },
-					{ name = "luasnip", group_index = 2 }, -- For luasnip users.
-				}, {
-					{ name = "buffer", group_index = 2 },
+					{ name = "copilot", group_index = 1 },
+					{ name = "nvim_lsp", group_index = 1 },
+					{ name = "luasnip", group_index = 1 }, -- For luasnip users.
+					{ name = "buffer", group_index = 1 },
 				}),
 			})
 		end,
