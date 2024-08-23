@@ -8,6 +8,7 @@ return {
 		config = function()
 			require("gruvbox").setup(opts)
 			vim.cmd.colorscheme("gruvbox")
+			vim.api.nvim_set_hl(0, "LineNr", { fg = "lightgray" })
 		end,
 	},
 	{
