@@ -8,6 +8,7 @@ return {
 			lua = { "stylua" },
 			graphql = { "prettierd" },
 			proto = { "buf" },
+			json = { "prettierd" },
 		},
 		formatters = {
 			sql_formatter = {
