@@ -9,6 +9,8 @@ return {
 			graphql = { "prettierd" },
 			proto = { "buf" },
 			json = { "prettierd" },
+			html = { "prettierd" },
+			js = { "prettierd" },
 		},
 		formatters = {
 			sql_formatter = {
