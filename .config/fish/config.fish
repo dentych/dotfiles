@@ -1,6 +1,6 @@
 if status is-interactive
-    if not set -q ZELLIJ
-        zellij attach -c main
+    if not set -q TMUX
+        tmux new-session -A -s main
     end
     if command -q zoxide init fish 2>/dev/null
         zoxide init fish | source
