@@ -11,6 +11,7 @@ return {
 			json = { "prettierd" },
 			html = { "prettierd" },
 			js = { "prettierd" },
+			yaml = { "prettierd" },
 		},
 		formatters = {
 			sql_formatter = {
