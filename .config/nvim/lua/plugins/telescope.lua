@@ -1,10 +1,20 @@
-local function git_or_find_files()
-	local path = vim.loop.cwd() .. "/.git"
-	local ok, err = vim.loop.fs_stat(path)
-	if ok then
-		require("telescope.builtin").git_files()
+-- We cache the results of "git rev-parse"
+-- Process creation is expensive in Windows, so this reduces latency
+local is_inside_work_tree = {}
+
+local project_files = function()
+	local opts = {} -- define here if you want to define something
+
+	local cwd = vim.fn.getcwd()
+	if is_inside_work_tree[cwd] == nil then
+		vim.fn.system("git rev-parse --is-inside-work-tree")
+		is_inside_work_tree[cwd] = vim.v.shell_error == 0
+	end
+
+	if is_inside_work_tree[cwd] then
+		require("telescope.builtin").git_files(opts)
 	else
-		require("telescope.builtin").find_files()
+		require("telescope.builtin").find_files(opts)
 	end
 end
 
@@ -23,14 +33,31 @@ return {
 	branch = "master",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
+		defaults = {
+			path_display = { "filename_first" },
+			layout_config = {
+				width = 0.95,
+				height = 0.95,
+				preview_cutoff = 250,
+			},
+		},
 		pickers = {
 			git_files = {
 				show_untracked = true,
 			},
 
 			lsp_document_symbols = {
-				symbol_width = 50,
+				symbol_width = 0.75,
 			},
+
+			lsp_dynamic_workspace_symbols = {
+				fname_width = 0.15,
+				symbol_width = 0.75,
+				layout_config = {
+					preview_width = 120,
+				},
+			},
+
 			buffers = {
 				mappings = {
 					n = {
@@ -39,20 +66,17 @@ return {
 				},
 			},
 		},
-		defaults = {
-			path_display = { "filename_first" },
-		},
 	},
 	keys = {
 		-- find
 		{
 			"<leader><space>",
-			git_or_find_files,
+			project_files,
 			desc = "Find files",
 		},
 		{
 			"<leader>ff",
-			git_or_find_files,
+			project_files,
 			desc = "Find files",
 		},
 		{
