@@ -4,7 +4,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			sql = { "sql_formatter" },
-			go = { "goimports" },
+			go = { "goimports-reviser", "goimports", stop_after_first = true },
 			lua = { "stylua" },
 			graphql = { "prettierd" },
 			proto = { "buf" },
@@ -17,17 +17,28 @@ return {
 			sql_formatter = {
 				args = { "-l", "postgresql" },
 			},
+			goimports = {
+				inherit = false,
+				command = "goimports",
+			},
+			["goimports-reviser"] = {
+				prepend_args = { "-rm-unused" },
+			},
 		},
 		format_on_save = {
-			timeout_ms = 500,
-			lsp_fallback = true,
+			timeout_ms = 1000,
+			lsp_format = "fallback",
 		},
+		default_format_opts = {
+			lsp_format = "fallback",
+		},
+		log_level = vim.log.levels.DEBUG,
 	},
 	keys = {
 		{
 			"<leader>cf",
 			function()
-				require("conform").format({ lsp_fallback = true })
+				require("conform").format()
 			end,
 			desc = "Format file",
 		},
