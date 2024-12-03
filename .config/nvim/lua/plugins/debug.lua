@@ -1,16 +1,20 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		recommended = true,
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
-		dependencies = {},
+		dependencies = {
+			{
+				"leoluz/nvim-dap-go",
+				opts = {},
+			},
+		},
         -- stylua: ignore
         keys = {
            { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
            { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
            { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-           { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
+           { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
            { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
            { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
            { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
@@ -26,29 +30,6 @@ return {
            { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
            { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
         },
-		config = function()
-			vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
-
-			-- for name, sign in pairs(LazyVim.config.icons.dap) do
-			-- 	sign = type(sign) == "table" and sign or { sign }
-			-- 	vim.fn.sign_define(
-			-- 		"Dap" .. name,
-			-- 		{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
-			-- 	)
-			-- end
-
-			-- setup dap config by VsCode launch.json file
-			local vscode = require("dap.ext.vscode")
-			local json = require("plenary.json")
-			vscode.json_decode = function(str)
-				return vim.json.decode(json.json_strip_comments(str))
-			end
-
-			-- Extends dap.configurations with entries read from .vscode/launch.json
-			if vim.fn.filereadable(".vscode/launch.json") then
-				vscode.load_launchjs()
-			end
-		end,
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
@@ -60,7 +41,6 @@ return {
 			ensure_installed = { "delve" },
 		},
 	},
-	{ "leoluz/nvim-dap-go" },
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
