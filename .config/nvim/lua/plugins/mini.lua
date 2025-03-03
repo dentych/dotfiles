@@ -11,6 +11,7 @@ return {
     {
         "echasnovski/mini.nvim",
         version = false,
+        event = "VimEnter",
         config = function(_, config)
             require("mini.surround").setup()
             require("mini.pairs").setup()
@@ -22,6 +23,7 @@ return {
 
             require("mini.starter").setup()
         end,
+
         keys = {
             { "<leader>e", open_mini },
         },
