@@ -1,14 +1,14 @@
 return {
-	{
-		"mfussenegger/nvim-dap",
-		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
+    {
+        "mfussenegger/nvim-dap",
+        desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
-		dependencies = {
-			{
-				"leoluz/nvim-dap-go",
-				opts = {},
-			},
-		},
+        dependencies = {
+            {
+                "leoluz/nvim-dap-go",
+                opts = {},
+            },
+        },
         -- stylua: ignore
         keys = {
            { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
@@ -30,42 +30,42 @@ return {
            { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
            { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
         },
-	},
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"mfussenegger/nvim-dap",
-		},
-		opts = {
-			ensure_installed = { "delve" },
-		},
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio",
-		},
+    },
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+        },
+        opts = {
+            ensure_installed = { "delve" },
+        },
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
 	       -- stylua: ignore
 		keys = {
 			{ "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
 			{ "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = { "n", "v" } },
 		},
-		opts = {},
-		config = function(_, opts)
-			local dap = require("dap")
-			local dapui = require("dapui")
-			dapui.setup(opts)
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open({ reset = true })
-			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close({})
-			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close({})
-			end
-		end,
-	},
+        opts = {},
+        config = function(_, opts)
+            local dap = require("dap")
+            local dapui = require("dapui")
+            dapui.setup(opts)
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open({ reset = true })
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close({})
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close({})
+            end
+        end,
+    },
 }

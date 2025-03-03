@@ -1,3 +1,12 @@
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
+-- highlight word when hovering over a word
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 	callback = function()
 		local bufnr = vim.api.nvim_get_current_buf()
@@ -12,6 +21,7 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 	end,
 })
 
+-- remove word highlight when moving cursor
 vim.api.nvim_create_autocmd("CursorMoved", {
 	callback = function()
 		vim.lsp.buf.clear_references()
