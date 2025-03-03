@@ -6,23 +6,18 @@ return {
             local should_disable = vim.env.NVIM_ENV ~= "work" and not vim.env.ANTHROPIC_API_KEY
 
             if should_disable then
-                vim.api.nvim_create_autocmd("VimEnter", {
-                    callback = function()
-                        vim.notify(
-                            "CodeCompanion is disabled. Please set ANTHROPIC_API_KEY environment variable.",
-                            vim.log.levels.WARN
-                        )
-                    end,
-                    once = true,
-                })
+                require("noice").notify(
+                    "CodeCompanion is disabled. Please set ANTHROPIC_API_KEY environment variable.",
+                    vim.log.levels.WARN
+                )
                 return false
             end
             return true
         end,
-        config = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
+            "folke/noice.nvim",
         },
         opts = {
             strategies = {
