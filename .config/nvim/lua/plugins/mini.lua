@@ -20,6 +20,8 @@ return {
             require("mini.ai").setup()
             require("mini.indentscope").setup()
             require("mini.files").setup()
+            require("mini.icons").setup()
+            require("mini.diff").setup()
 
             require("mini.starter").setup()
         end,

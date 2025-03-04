@@ -25,12 +25,17 @@ return {
                     adapter = vim.env.NVIM_ENV == "work" and "copilot" or "anthropic",
                     keymaps = {
                         close = {
-                            modes = { n = "q", i = "<C-q>" },
+                            modes = { n = "<C-c>", i = "<C-q>" },
                         },
                     },
                 },
                 inline = {
                     adapter = vim.env.NVIM_ENV == "work" and "copilot" or "anthropic",
+                },
+            },
+            display = {
+                diff = {
+                    provider = "mini_diff",
                 },
             },
         },
