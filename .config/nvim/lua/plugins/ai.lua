@@ -2,8 +2,8 @@ return {
     {
         "olimorris/codecompanion.nvim",
         enabled = function()
-            -- Only check for ANTHROPIC_API_KEY if NVIM_ENV is not "work"
-            local should_disable = vim.env.NVIM_ENV ~= "work" and not vim.env.ANTHROPIC_API_KEY
+            -- Only check for ANTHROPIC_API_KEY if DONNE_IDE_ENV is not "work"
+            local should_disable = vim.env.DONNE_IDE_ENV ~= "work" and not vim.env.ANTHROPIC_API_KEY
 
             if should_disable then
                 require("noice").notify(
@@ -22,7 +22,7 @@ return {
         opts = {
             strategies = {
                 chat = {
-                    adapter = vim.env.NVIM_ENV == "work" and "copilot" or "anthropic",
+                    adapter = vim.env.DONNE_IDE_ENV == "work" and "copilot" or "anthropic",
                     keymaps = {
                         close = {
                             modes = { n = "<C-c>", i = "<C-q>" },
@@ -30,7 +30,7 @@ return {
                     },
                 },
                 inline = {
-                    adapter = vim.env.NVIM_ENV == "work" and "copilot" or "anthropic",
+                    adapter = vim.env.DONNE_IDE_ENV == "work" and "copilot" or "anthropic",
                 },
             },
             display = {
