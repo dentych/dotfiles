@@ -5,6 +5,7 @@ local open_mini = function()
 
     if require("util").fileExists(path) then
         mf.open(vim.api.nvim_buf_get_name(0), false)
+        mf.reveal_cwd()
     else
         mf.open(nil, false)
     end
