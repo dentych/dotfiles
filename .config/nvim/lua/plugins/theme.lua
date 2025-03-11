@@ -3,14 +3,21 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
+        opts = {
+            style = "night",
+            on_highlights = function(hl, c)
+                hl.LineNr = { fg = "white" }
+                hl.CursorLineNr = { fg = "#ffffff", bold = true }
+                hl.LineNrAbove = { fg = "lightgray" }
+                hl.LineNrBelow = { fg = "lightgray" }
+            end,
+            on_colors = function(c)
+                c.border = "lightgray"
+            end,
+        },
         config = function(_, opts)
             require("tokyonight").setup(opts)
-            vim.cmd.colorscheme("tokyonight-night")
-            vim.api.nvim_set_hl(0, "LineNr", { fg = "white" })
-            vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff", bold = true })
-            vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "lightgray" })
-            vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "lightgray" })
+            vim.cmd.colorscheme("tokyonight")
         end,
     },
     {
@@ -20,7 +27,7 @@ return {
         opts = {
             contrast = "hard",
         },
-        config = function()
+        config = function(_, opts)
             require("gruvbox").setup(opts)
             vim.cmd.colorscheme("gruvbox")
             vim.api.nvim_set_hl(0, "LineNr", { fg = "lightgray" })
