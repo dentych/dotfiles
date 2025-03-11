@@ -1,10 +1,13 @@
 -- use this to open mini files at current location (instead of always from root dir)
 local open_mini = function()
     local mf = require("mini.files")
-    local _ = mf.close() or mf.open(vim.api.nvim_buf_get_name(0), false)
-    vim.defer_fn(function()
-        mf.reveal_cwd()
-    end, 30)
+    local path = vim.api.nvim_buf_get_name(0)
+
+    if require("util").fileExists(path) then
+        mf.open(vim.api.nvim_buf_get_name(0), false)
+    else
+        mf.open(nil, false)
+    end
 end
 
 return {
@@ -23,7 +26,19 @@ return {
             require("mini.icons").setup()
             require("mini.diff").setup()
 
-            require("mini.starter").setup()
+            local starter = require("mini.starter")
+            starter.setup({
+                header = [[
+888888ba                                      dP 888888ba   88888888b 
+88    `8b                                     88 88    `8b  88        
+88     88 .d8888b. 88d888b. 88d888b. .d8888b. 88 88     88 a88aaaa    
+88     88 88'  `88 88'  `88 88'  `88 88ooood8 88 88     88  88        
+88    .8P 88.  .88 88    88 88    88 88.  ... 88 88    .8P  88        
+8888888P  `88888P' dP    dP dP    dP `88888P' dP 8888888P   88888888P 
+                                                                      
+                                                                      
+                ]],
+            })
         end,
 
         keys = {
