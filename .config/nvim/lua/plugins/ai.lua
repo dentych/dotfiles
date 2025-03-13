@@ -33,11 +33,11 @@ return {
                     adapter = vim.env.DONNE_IDE_ENV == "work" and "copilot" or "anthropic",
                 },
             },
-            display = {
-                diff = {
-                    provider = "mini_diff",
-                },
-            },
+            -- display = {
+            --     diff = {
+            --         provider = "mini_diff",
+            --     },
+            -- },
         },
         keys = {
             {
