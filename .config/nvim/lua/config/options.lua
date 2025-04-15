@@ -28,3 +28,5 @@ opt.undolevels = 10000
 opt.termguicolors = true
 opt.updatetime = 1000
 opt.splitright = true
+
+opt.guicursor = "n-v-c-i:block"
