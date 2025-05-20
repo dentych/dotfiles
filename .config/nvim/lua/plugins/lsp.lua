@@ -9,6 +9,7 @@ return {
               buildFlags = { "-tags=integration" },
               -- disable annoying hints in the code
               hints = false,
+              usePlaceholders = false,
             },
           },
         },
