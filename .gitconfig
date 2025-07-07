@@ -1,3 +1,6 @@
 [user]
 	email = dennis@tychsen.me
 	name = dentych
+[push]
+	default = simple
+	autoSetupRemote = true
