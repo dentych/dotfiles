@@ -1,12 +1,20 @@
 if status is-interactive
-    if not set -q TMUX
-        tmux new-session -A -s main
+    # Start zellij or tmux if not already in a session
+    if not set -q ZELLIJ; and not set -q TMUX
+        if command -q zellij
+            zellij attach main -c
+        else if command -q tmux
+            tmux new-session -A -s main
+        end
     end
-    if command -q zoxide init fish 2>/dev/null
+
+    # Initialize zoxide if available
+    if command -q zoxide
         zoxide init fish | source
     end
-    if command -q fzf --fish 2>/dev/null
+
+    # Initialize fzf if available
+    if command -q fzf
         fzf --fish | source
     end
 end
-
