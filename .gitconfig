@@ -1,7 +1,6 @@
 [user]
 	email = dennis@tychsen.me
 	name = dentych
-    signingkey = 4E910E0DF51E7978714AD6D0E89F73AF8A45D5E7
 [includeIf "gitdir/i:/Users/dennistychsen/lunar/"]
   path = .gitconfig_lw
 [includeIf "gitdir/i:/Users/dennistychsen/go/src/github.com/lunarway/"]
@@ -16,5 +15,3 @@
 
 [init]
 	defaultBranch = main
-[commit]
-      gpgsign = true
