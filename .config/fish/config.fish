@@ -18,3 +18,8 @@ if status is-interactive
         fzf --fish | source
     end
 end
+
+# Source local configuration if it exists
+if test -f ~/.config/fish/local.fish
+    source ~/.config/fish/local.fish
+end
