@@ -1,3 +1,5 @@
+tap "legaard/tap"
+
 brew "bat"
 brew "fzf"
 brew "lazygit"
@@ -9,6 +11,8 @@ brew "mise"
 brew "ripgrep"
 brew "jq"
 brew "fd"
+
+brew "legaard/tap/uuidy"
 
 cask "ghostty"
 cask "zed"
