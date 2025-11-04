@@ -1,17 +1,11 @@
 [user]
 	email = dennis@tychsen.me
 	name = dentych
-[includeIf "gitdir/i:/Users/dennistychsen/lunar/"]
-  path = .gitconfig_lw
-[includeIf "gitdir/i:/Users/dennistychsen/go/src/github.com/lunarway/"]
-  path = .gitconfig_lw
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [push]
 	default = simple
 	autoSetupRemote = true
-[core]
-	excludesfile = /Users/nico/.gitignore_global
 
 [init]
 	defaultBranch = main
