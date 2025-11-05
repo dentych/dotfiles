@@ -1,0 +1,21 @@
+# Ghostty Configuration
+
+# Font settings
+font-family = "JetBrains Mono"
+font-size = 13
+
+# Theme
+theme = Niji
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = true
+
+# Shell integration
+shell-integration = detect
+
+# Copy on select
+copy-on-select = true
+
+# Mouse
+mouse-hide-while-typing = true

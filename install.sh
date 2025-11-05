@@ -18,4 +18,4 @@ brew bundle --file=./Brewfile
 
 # Symlink dotfiles
 echo 'Copying and linking dotfiles...'
-stow -v --no-folding aerospace fish foot hypr nvim waybar zellij git editorconfig
+stow -v --no-folding aerospace fish foot ghostty hypr nvim waybar zellij git editorconfig
