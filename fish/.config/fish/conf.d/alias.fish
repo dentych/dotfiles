@@ -1,5 +1,5 @@
 if status is-interactive
-	alias c "xclip -selection clipboard"
-    alias k "kubectl"
+    alias c "xclip -selection clipboard"
+    alias k kubectl
+    alias gtc "cd ~/code"
 end
-
