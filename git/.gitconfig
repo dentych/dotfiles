@@ -9,3 +9,6 @@
 
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/code/understory/"]
+	path = ~/.gitconfig-understory

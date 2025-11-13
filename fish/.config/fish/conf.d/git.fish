@@ -25,6 +25,7 @@ alias gc!='git commit -v --amend'
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
 alias gcmsg='git commit -m'
+alias gclean "git clean -d -i"
 
 function gcm
     set -l default_branch (git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
@@ -36,4 +37,3 @@ end
 alias ga='git add'
 alias gdca='git diff --cached'
 alias gdab='git branch | grep -v \'*\' | xargs git branch -D'
-
