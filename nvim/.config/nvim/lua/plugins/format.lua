@@ -8,6 +8,18 @@ return {
       opts.formatters.sql_formatter = {
         prepend_args = { "-l", "postgresql" },
       }
+
+      -- Use prettier for TypeScript/JavaScript files
+      opts.formatters_by_ft.typescript = { "prettier" }
+      opts.formatters_by_ft.typescriptreact = { "prettier" }
+      opts.formatters_by_ft.javascript = { "prettier" }
+      opts.formatters_by_ft.javascriptreact = { "prettier" }
+      opts.formatters_by_ft.svelte = { "prettier" }
+      opts.formatters_by_ft.json = { "prettier" }
+      opts.formatters_by_ft.jsonc = { "prettier" }
+      opts.formatters_by_ft.css = { "prettier" }
+      opts.formatters_by_ft.scss = { "prettier" }
+      opts.formatters_by_ft.html = { "prettier" }
     end,
   },
   {
