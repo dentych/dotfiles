@@ -1,4 +1,16 @@
 if status is-interactive
+    # pnpm
+    set -gx PNPM_HOME "/home/dennis/.local/share/pnpm"
+    if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+    end
+    # pnpm end
+
+    # Initialize starship if available
+    if command -q starship
+        starship init fish | source
+    end
+
     # Start zellij or tmux if not already in a session
     if not set -q ZELLIJ; and not set -q TMUX
         if command -q zellij
@@ -18,10 +30,3 @@ if status is-interactive
         fzf --fish | source
     end
 end
-
-# pnpm
-set -gx PNPM_HOME "/home/dennis/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
