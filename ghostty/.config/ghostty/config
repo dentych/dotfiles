@@ -2,7 +2,7 @@
 
 # Font settings
 font-family = "JetBrains Mono"
-font-size = 13
+font-size = 12
 
 # Theme
 theme = Niji
