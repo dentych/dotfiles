@@ -13,6 +13,17 @@ return {
             },
           },
         },
+        vtsls = {
+          settings = {
+            typescript = {
+              inlayHints = {
+                parameterNames = {
+                  enabled = false,
+                },
+              },
+            },
+          },
+        },
       },
     },
   },

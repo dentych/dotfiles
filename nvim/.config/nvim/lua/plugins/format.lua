@@ -17,6 +17,7 @@ return {
       opts.formatters_by_ft.svelte = { "prettier" }
       opts.formatters_by_ft.json = { "prettier" }
       opts.formatters_by_ft.jsonc = { "prettier" }
+      opts.formatters_by_ft.yaml = { "prettier" }
       opts.formatters_by_ft.css = { "prettier" }
       opts.formatters_by_ft.scss = { "prettier" }
       opts.formatters_by_ft.html = { "prettier" }
