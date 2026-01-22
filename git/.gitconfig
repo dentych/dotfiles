@@ -11,3 +11,5 @@
 
 [includeIf "gitdir:~/code/understory/"]
 	path = ~/.gitconfig-understory
+[core]
+	editor = hx
