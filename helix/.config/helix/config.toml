@@ -1,8 +1,9 @@
-theme = "jetbrains_dark"
+theme = "custom"
 
 [editor]
 line-number = "relative"
 #mouse = false
+completion-timeout = 100
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,13 +18,19 @@ goto-reference-include-declaration = false
 
 [keys.normal]
 esc = ["collapse_selection"]
+C-c = ["collapse_selection"]
+X = "extend_line_above"
 
 [keys.normal.z]
+C-c = "normal_mode"
+
+[keys.select]
 C-c = "normal_mode"
 
 [keys.normal.space]
 C-c = "normal_mode"
 space = "file_picker"
+B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
 
 [keys.insert]
 C-c = "normal_mode"

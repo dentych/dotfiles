@@ -29,4 +29,6 @@ if status is-interactive
     if command -q fzf
         fzf --fish | source
     end
+
+    set -x EDITOR hx
 end
