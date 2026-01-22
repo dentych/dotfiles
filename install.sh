@@ -18,6 +18,6 @@ fi
 
 # Symlink dotfiles
 echo 'Copying and linking dotfiles wit no folding...'
-stow -v --no-folding aerospace fish foot ghostty hypr waybar zellij git editorconfig tmux starship alacritty
+stow -v --no-folding aerospace fish foot ghostty hypr waybar zellij git editorconfig tmux starship alacritty helix
 echo 'Copying and linking dotfiles with folding'
 stow -v nvim

@@ -10,6 +10,7 @@ decorations = "None"
 blur = true
 opacity = 0.5
 padding = { x = 16, y = 16 }
+option_as_alt = "Both"
 
 [font]
 size = 14.0

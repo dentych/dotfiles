@@ -1,0 +1,29 @@
+theme = "jetbrains-dark"
+
+[editor]
+line-number = "relative"
+#mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+goto-reference-include-declaration = false
+
+[keys.normal]
+esc = ["collapse_selection"]
+
+[keys.normal.z]
+C-c = "normal_mode"
+
+[keys.normal.space]
+C-c = "normal_mode"
+space = "file_picker"
+
+[keys.insert]
+C-c = "normal_mode"
