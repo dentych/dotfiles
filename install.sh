@@ -35,8 +35,25 @@ else
 	echo 'Homebrew not found - skipping package installation'
 fi
 
+# Install stow if not available
+if ! command_exist stow; then
+	echo 'stow not found - installing...'
+	if command_exist brew; then
+		brew install stow
+	elif command_exist apt; then
+		sudo apt update && sudo apt install -y stow
+	elif command_exist dnf; then
+		sudo dnf install -y stow
+	elif command_exist pacman; then
+		sudo pacman -S --noconfirm stow
+	else
+		echo 'Error: No supported package manager found. Please install stow manually.'
+		exit 1
+	fi
+fi
+
 # Symlink dotfiles
-echo 'Copying and linking dotfiles wit no folding...'
+echo 'Copying and linking dotfiles with no folding...'
 stow -v --no-folding aerospace fish foot ghostty hypr waybar zellij git editorconfig tmux starship alacritty helix
 echo 'Copying and linking dotfiles with folding'
 stow -v nvim
