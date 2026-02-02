@@ -50,6 +50,11 @@ if ! command_exist stow; then
 		echo 'Error: No supported package manager found. Please install stow manually.'
 		exit 1
 	fi
+
+	if ! command_exist stow; then
+		echo 'Error: Failed to install stow. Please install it manually.'
+		exit 1
+	fi
 fi
 
 # Symlink dotfiles
