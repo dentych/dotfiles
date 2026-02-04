@@ -1,0 +1,4 @@
+inherits = "jetbrains_dark"
+
+"ui.background" = {}
+"ui.cursor.primary" = { fg = "#000000", bg = "#d4d4d4" }
