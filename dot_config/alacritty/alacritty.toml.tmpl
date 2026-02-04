@@ -13,7 +13,11 @@ padding = { x = 16, y = 16 }
 option_as_alt = "Both"
 
 [font]
+{{- if eq .chezmoi.os "linux" }}
+size = 12.0
+{{ else }}
 size = 14.0
+{{- end }}
 normal = { family = "JetBrainsMono Nerd Font" }
 bold = { family = "JetBrainsMono Nerd Font" }
 
