@@ -2,6 +2,7 @@ if status is-interactive
     alias c "xclip -selection clipboard"
     alias k kubectl
     alias gtc "cd ~/code"
+    alias ccd "chezmoi cd"
 
     alias yz yazi
     alias c chezmoi
