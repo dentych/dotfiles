@@ -3,9 +3,9 @@ if status is-interactive
     alias k kubectl
     alias gtc "cd ~/code"
     alias ccd "chezmoi cd"
-
     alias yz yazi
     alias c chezmoi
+    alias lg lazygit
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
