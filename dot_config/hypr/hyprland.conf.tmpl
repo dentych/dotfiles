@@ -8,13 +8,14 @@ source = desktop.conf
 # Set programs that you use
 $terminal = alacritty
 $fileManager = dolphin
-$menu = rofi -show run
+$menu = rofi -show run -modes run,drun,calc
+$browser = vivaldi
 
 #################
 ### AUTOSTART ###
 #################
 
-# NO AUTOSTARTS YET :)
+# No autostarts
 
 #############################
 ### ENVIRONMENT VARIABLES ###
@@ -199,14 +200,16 @@ $right = L
 $down = J
 $up = K
 
-# See https://wiki.hyprland.org/Configuring/Keywords/
 $mainMod = SUPER # Sets "Windows" key as main modifier
 
-# Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, $terminal
 bind = $mainMod, Q, killactive,
 bind = $mainMod, M, exit,
 bind = $mainMod, E, exec, $fileManager
+bind = $mainMod, B, exec, $browser
+{{- if eq .chezmoi.hostname "tower" }}
+bind = $mainMod, S, exec, steam
+{{ end -}}
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, P, pseudo, # dwindle
@@ -214,25 +217,21 @@ bind = $mainMod, T, togglesplit, # dwindle
 bind = $mainMod, F, fullscreen
 bind = $mainMod CTRL, L, exec, hyprlock
 
-# Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
 bind = $mainMod, right, movefocus, r
 bind = $mainMod, up, movefocus, u
 bind = $mainMod, down, movefocus, d
 
-# Move focus with mainMod + HJKL
 bind = $mainMod, $left, movefocus, l
 bind = $mainMod, $right, movefocus, r
 bind = $mainMod, $up, movefocus, u
 bind = $mainMod, $down, movefocus, d
 
-# Move window with mainMod SHIFT + HJKL
 bind = $mainMod SHIFT, $left, movewindow, l
 bind = $mainMod SHIFT, $right, movewindow, r
 bind = $mainMod SHIFT, $up, movewindow, u
 bind = $mainMod SHIFT, $down, movewindow, d
 
-# Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
 bind = $mainMod, 2, workspace, 2
 bind = $mainMod, 3, workspace, 3
@@ -244,7 +243,6 @@ bind = $mainMod, 8, workspace, 8
 bind = $mainMod, 9, workspace, 9
 bind = $mainMod, 0, workspace, 10
 
-# Move active window to a workspace with mainMod + SHIFT + [0-9]
 bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
 bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
 bind = $mainMod SHIFT, 3, movetoworkspacesilent, 3
@@ -256,23 +254,18 @@ bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
 bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
 bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
 
-# Example special workspace (scratchpad)
 bind = $mainMod, grave, togglespecialworkspace, magic
 bind = $mainMod SHIFT, grave, movetoworkspace, special:magic
 
-# Screenshot with grim + slurp + wl-clipboard
 bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" - | wl-copy
 bind = $mainMod CTRL SHIFT, S, exec, grim - | wl-copy
 
-# Scroll through existing workspaces with mainMod + scroll
 bind = $mainMod, mouse_down, workspace, e+1
 bind = $mainMod, mouse_up, workspace, e-1
 
-# Move/resize windows with mainMod + LMB/RMB and dragging
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
-# Switch to a submap called `resize`.
 bind = $mainMod CTRL, R, submap, resize
 
 # Start a submap called "resize".
