@@ -1,0 +1,7 @@
+[[language]]
+name = "toml"
+file-types = ["toml", { glob = "*.toml.tmpl"}]
+
+[[language]]
+name = "hyprlang"
+file-types = [{ glob = "hypr/*.conf"}, { glob = "hypr/*.conf.tmpl" }]
