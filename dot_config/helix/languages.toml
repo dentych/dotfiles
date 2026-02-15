@@ -1,3 +1,15 @@
+[language-server.emmet-ls]
+args = ["--stdio"]
+command="emmet-ls"
+
 [[language]]
 name = "typescript"
 auto-format = true
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+
+[[language]]
+name = "svelte"
+language-servers = ["svelteserver", "emmet-ls"]
