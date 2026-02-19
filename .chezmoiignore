@@ -1,3 +1,12 @@
 Brewfile
 README.md
 .brew_last_run
+
+{{- if eq .hosttype "server" }}
+.config/alacritty
+.config/hypr
+.config/waybar
+.config/zellij
+.config/ghostty
+.config/nvim
+{{- end }}
