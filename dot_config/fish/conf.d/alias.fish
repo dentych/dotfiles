@@ -6,6 +6,7 @@ if status is-interactive
     alias yz yazi
     alias c chezmoi
     alias lg lazygit
+    alias oc opencode
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
