@@ -1,5 +1,6 @@
 alias g='git'
 alias gr='git reset'
+alias grh='git reset --hard'
 alias grs='git restore'
 alias gst='git status'
 alias gsw='git switch'
