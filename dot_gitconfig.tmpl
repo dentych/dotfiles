@@ -1,8 +1,10 @@
 [user]
 	email = dennis@tychsen.me
 	name = dentych
+{{- if eq .hosttype "desktop" "laptop" }}
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+{{- end }}
 [push]
 	default = simple
 	autoSetupRemote = true

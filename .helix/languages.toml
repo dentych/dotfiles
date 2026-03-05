@@ -5,3 +5,7 @@ file-types = ["toml", { glob = "*.toml.tmpl"}]
 [[language]]
 name = "hyprlang"
 file-types = [{ glob = "hypr/*.conf"}, { glob = "hypr/*.conf.tmpl" }]
+
+[[language]]
+name = "git-config"
+file-types = ["gitconfig", {glob = "dot_gitconfig"}, {glob = "dot_gitconfig.tmpl"}, { glob = ".gitmodules" }, { glob = "gitconfig" }, { glob = ".gitconfig" }, { glob = ".git/config" }, { glob = ".config/git/config" }, { glob = ".git/modules/*/config" }, { glob = "config.worktree" }]
