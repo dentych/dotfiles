@@ -13,3 +13,7 @@ language-servers = ["vscode-html-language-server", "emmet-ls"]
 [[language]]
 name = "svelte"
 language-servers = ["svelteserver", "emmet-ls"]
+
+[[language]]
+name = "json5"
+file-types = ["json5", { glob = "openclaw.json" }]
