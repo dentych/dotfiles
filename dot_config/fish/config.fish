@@ -32,3 +32,7 @@ if status is-interactive
 
     set -x EDITOR hx
 end
+
+function handler_emit_bell --on-event fish_postexec
+    printf '\a'
+end
