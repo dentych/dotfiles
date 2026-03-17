@@ -11,7 +11,14 @@
 [init]
 	defaultBranch = main
 
-[includeIf "gitdir:~/code/understory/"]
-	path = ~/.gitconfig-understory
+[diff]
+    tool = zed
+[difftool "zed"]
+    cmd = zed --wait --diff $LOCAL $REMOTE
+
 [core]
 	editor = hx
+
+[includeIf "gitdir:~/code/understory/"]
+	path = ~/.gitconfig-understory
+
