@@ -23,6 +23,7 @@ X = "extend_line_above"
 
 [keys.normal.z]
 C-c = "normal_mode"
+w = ":toggle soft-wrap.enable"
 
 [keys.select]
 C-c = "normal_mode"
