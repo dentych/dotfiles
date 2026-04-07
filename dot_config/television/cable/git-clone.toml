@@ -1,0 +1,19 @@
+[metadata]
+name = "git-clone"
+description = "fuzzy find and clone git repos"
+requirements = ["git", "gh"]
+
+[source]
+command = "{ gh repo list --limit 1000; gh org list | awk '{print $1}' | xargs -L 1 gh repo list -L 1000; } | awk '{print $1}' | sort -u"
+
+[preview]
+command = "gh repo view {}"
+
+[keybindings]
+enter = "actions:clone"
+
+[actions.clone]
+description = "Clone the selected repository"
+command = "gh repo clone {}"
+mode = "execute"
+
