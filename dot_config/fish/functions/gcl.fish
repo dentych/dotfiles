@@ -17,6 +17,7 @@ function gcl --description "Fuzzy find and clone a GitHub repo"
 
     if test -n "$repo"
         gh repo clone "$repo"
+        and cd (basename "$repo")
     end
 
     # Refresh cache in background for next time
