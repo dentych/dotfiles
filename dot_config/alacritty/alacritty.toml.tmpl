@@ -25,6 +25,9 @@ bold = { family = "JetBrainsMono Nerd Font" }
 style = { shape = "Beam", blinking = "Off" }
 vi_mode_style = { shape = "Beam", blinking = "Off" }
 
+[bell]
+command = { program = "{{ .chezmoi.homeDir }}/.local/bin/notify-bell.sh" }
+
 [selection]
 save_to_clipboard = true
 
