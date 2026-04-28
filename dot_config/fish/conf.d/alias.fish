@@ -7,6 +7,7 @@ if status is-interactive
     alias c chezmoi
     alias lg lazygit
     alias oc opencode
+    alias cc "claude --enable-auto-mode"
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
