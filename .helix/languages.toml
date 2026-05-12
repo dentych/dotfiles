@@ -4,7 +4,11 @@ file-types = ["toml", { glob = "*.toml.tmpl"}]
 
 [[language]]
 name = "hyprlang"
-file-types = [{ glob = "hypr/*.conf"}, { glob = "hypr/*.conf.tmpl" }]
+file-types = [{ glob = "hypr/*.conf"}]
+
+[[language]]
+name = "lua"
+file-types = ["lua", { glob = "*.lua.tmpl" }]
 
 [[language]]
 name = "git-config"
