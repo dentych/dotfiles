@@ -9,6 +9,7 @@ file-types = [{ glob = "hypr/*.conf"}]
 [[language]]
 name = "lua"
 file-types = ["lua", { glob = "*.lua.tmpl" }]
+roots = [".luarc.json", ".luarc.jsonc"]
 
 [[language]]
 name = "git-config"
