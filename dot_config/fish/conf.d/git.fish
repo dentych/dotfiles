@@ -1,9 +1,9 @@
-alias g='git'
-alias gr='git reset'
-alias grh='git reset --hard'
-alias grs='git restore'
-alias gst='git status'
-alias gsw='git switch'
+alias g git
+alias gr 'git reset'
+alias grh 'git reset --hard'
+alias grs 'git restore'
+alias gst 'git status'
+alias gsw 'git switch'
 
 function gswm
     set -l default_branch (git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
@@ -13,20 +13,21 @@ function gswm
     git switch $default_branch
 end
 
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gf='git fetch'
-alias gl='git pull'
-alias glr='git pull --rebase'
-alias gp='git push'
-alias gco='git checkout'
-alias gb='git branch'
-alias gd='git diff'
-alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gca='git commit -v -a'
-alias gca!='git commit -v -a --amend'
-alias gcmsg='git commit -m'
+alias gd 'git diff'
+alias gdc 'git diff --cached'
+alias gf 'git fetch'
+alias gl 'git pull'
+alias glr 'git pull --rebase'
+alias gp 'git push'
+alias gco 'git checkout'
+alias gb 'git branch'
+alias gd 'git diff'
+alias gc 'git commit -v'
+alias gc! 'git commit -v --amend'
+alais gcp 'git cherry-pick'
+alias gca 'git commit -v -a'
+alias gca! 'git commit -v -a --amend'
+alias gcmsg 'git commit -m'
 alias gclean "git clean -d -i"
 
 function gcm
