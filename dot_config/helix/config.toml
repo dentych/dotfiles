@@ -20,6 +20,14 @@ goto-reference-include-declaration = false
 esc = ["collapse_selection"]
 C-c = ["collapse_selection"]
 X = "extend_line_above"
+C-g = [
+    ":write-all",
+    ":new",
+    ":insert-output lazygit",
+    ":buffer-close!",
+    ":redraw",
+    ":reload-all"
+]
 
 [keys.normal.z]
 C-c = "normal_mode"
