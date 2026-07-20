@@ -1,0 +1,139 @@
+/*
+ * Catppuccin Mocha — matches the waybar theme
+ */
+
+* {
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+    surface0:  #313244;
+    surface1:  #45475a;
+    surface2:  #585b70;
+    overlay0:  #6c7086;
+    text:      #cdd6f4;
+    subtext0:  #a6adc8;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    green:     #a6e3a1;
+    red:       #f38ba8;
+    mauve:     #cba6f7;
+
+    background-color:   transparent;
+    text-color:         @text;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    transparency:       "real";
+    location:           center;
+    anchor:             center;
+    width:              620px;
+    border-radius:      16px;
+    background-color:   @base;
+    border:             2px;
+    border-color:       @surface1;
+}
+
+mainbox {
+    padding:            16px;
+    spacing:            14px;
+}
+
+/* --- Search bar ----------------------------------------------------------- */
+
+inputbar {
+    background-color:   @mantle;
+    border-radius:      12px;
+    padding:            10px 14px;
+    spacing:            10px;
+    children:           [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:         @mauve;
+    vertical-align:     0.5;
+}
+
+entry {
+    placeholder:        "Search…";
+    placeholder-color:  @overlay0;
+    text-color:         @text;
+    vertical-align:     0.5;
+    cursor:             text;
+}
+
+/* --- Results list --------------------------------------------------------- */
+
+listview {
+    columns:            1;
+    lines:              8;
+    fixed-height:       false;
+    dynamic:            true;
+    scrollbar:          false;
+    spacing:            4px;
+}
+
+element {
+    padding:            9px 12px;
+    spacing:            10px;
+    border-radius:      10px;
+    text-color:         @subtext0;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color:   transparent;
+    text-color:         @subtext0;
+}
+
+element selected.normal {
+    background-color:   @blue;
+    text-color:         @crust;
+}
+
+element-icon {
+    size:               1.2em;
+    vertical-align:     0.5;
+    background-color:   transparent;
+}
+
+element-text {
+    vertical-align:     0.5;
+    background-color:   transparent;
+    text-color:         inherit;
+}
+
+/* --- Mode switcher -------------------------------------------------------- */
+
+mode-switcher {
+    spacing:            8px;
+}
+
+button {
+    padding:            8px 12px;
+    border-radius:      10px;
+    background-color:   @mantle;
+    text-color:         @subtext0;
+}
+
+button selected {
+    background-color:   @surface0;
+    text-color:         @lavender;
+}
+
+/* --- Error / message ------------------------------------------------------ */
+
+message {
+    margin:             0;
+    padding:            0;
+}
+
+textbox {
+    padding:            10px 14px;
+    border-radius:      12px;
+    background-color:   @mantle;
+    text-color:         @text;
+}

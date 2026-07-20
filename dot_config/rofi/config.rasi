@@ -1,0 +1,13 @@
+configuration {
+    modes:                      "run,drun,calc";
+    font:                       "JetBrainsMono Nerd Font 12";
+    show-icons:                 true;
+    icon-theme:                 "Adwaita";
+    drun-display-format:        "{name}";
+    display-run:                " Run";
+    display-drun:               " Apps";
+    display-calc:               " Calc";
+    calc-command:               "echo -n '{result}' | wl-copy";
+}
+
+@theme "catppuccin-mocha"
