@@ -4,6 +4,9 @@ configuration {
     show-icons:                 true;
     icon-theme:                 "Adwaita";
     drun-display-format:        "{name}";
+    drun-match-fields:          "name, generic,keywords";
+    sort:                       true;
+    sorting-method:             "fzf";
     display-run:                " Run";
     display-drun:               " Apps";
     display-calc:               " Calc";
