@@ -10,3 +10,7 @@ README.md
 .config/ghostty
 .config/nvim
 {{- end }}
+
+{{- if ne .hosttype "tower" }}
+.local/share/applications
+{{- end }}

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Shutdown
+GenericName=Power Off
+Comment=Power off the system
+Exec=systemctl poweroff
+Icon=system-shutdown-symbolic
+Terminal=false
+Categories=System;
+Keywords=shutdown;poweroff;power off;halt;turn off;
