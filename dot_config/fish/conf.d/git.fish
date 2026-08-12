@@ -40,6 +40,7 @@ end
 alias ga='git add'
 alias gdca='git diff --cached'
 alias gdab='git branch | grep -v \'*\' | xargs git branch -D'
+alias gwt='git worktree'
 
 function cdr
     set -l git_root (git rev-parse --show-toplevel 2>/dev/null)
