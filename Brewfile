@@ -11,6 +11,7 @@ brew "mise"
 brew "ripgrep"
 brew "jq"
 brew "fd"
+brew "terminal-notifier"
 
 brew "legaard/tap/uuidy"
 
