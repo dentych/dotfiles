@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if ! command -v jq >/dev/null 2>&1; then
+	cat
+	exit 0
+fi
+
+NOTIFY='~/.local/bin/claude-notify.sh'
+
+jq -s --arg cmd "$NOTIFY" '
+	(.[0] // {})
+	| .hooks = ((.hooks // {}) + {
+		Notification: [{ hooks: [{ type: "command", command: $cmd, timeout: 5 }] }],
+		Stop:         [{ hooks: [{ type: "command", command: $cmd, timeout: 5 }] }]
+	})
+	'
