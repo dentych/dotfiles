@@ -1,4 +1,7 @@
 if status is-interactive
+    # Add ~/.local/bin to PATH
+    fish_add_path -g "$HOME/.local/bin"
+
     # pnpm
     set -gx PNPM_HOME "$HOME/.local/share/pnpm"
     if not string match -q -- $PNPM_HOME $PATH
@@ -13,10 +16,10 @@ if status is-interactive
 
     # Start zellij or tmux if not already in a session
     if not set -q ZELLIJ; and not set -q TMUX
-        if command -q zellij
-            zellij attach main -c
-        else if command -q tmux
+        if command -q tmux
             tmux new-session -A -s main
+        else if command -q zellij
+            zellij attach main -c
         end
     end
 
