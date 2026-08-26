@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Copy stdin to the *local* clipboard (the machine running the terminal) via OSC 52.
+# Works over SSH: the escape sequence rides the existing terminal connection.
+set -euo pipefail
+
+if [ -n "${TMUX:-}" ]; then
+  # tmux forwards the OSC 52 outward (needs set-clipboard on/external)
+  tmux load-buffer -w -
+else
+  printf '\033]52;c;%s\007' "$(base64 | tr -d '\n')" > /dev/tty
+fi

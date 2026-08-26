@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Headless box: there is no browser here. Put the URL on the local (Mac)
+# clipboard via OSC 52 and print it so it stays cmd-clickable in the terminal.
+url="${1:-}"
+[ -z "$url" ] && { echo "usage: xdg-open <url>" >&2; exit 1; }
+printf '%s' "$url" | pbcopy 2>/dev/null || true
+printf '\n\033[1;36m→ %s\033[0m  \033[2m(copied to your clipboard)\033[0m\n\n' "$url"
