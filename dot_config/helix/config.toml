@@ -1,6 +1,7 @@
 theme = "custom_jetbrains_dark"
 
 [editor]
+true-color = true
 line-number = "relative"
 #mouse = false
 completion-timeout = 100
