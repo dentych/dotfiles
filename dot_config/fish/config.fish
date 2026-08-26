@@ -2,6 +2,10 @@ if status is-interactive
     # Add ~/.local/bin to PATH
     fish_add_path -g "$HOME/.local/bin"
 
+    # Go toolchain and `go install` binaries
+    fish_add_path -g /opt/go/bin
+    fish_add_path -g "$HOME/go/bin"
+
     # pnpm
     set -gx PNPM_HOME "$HOME/.local/share/pnpm"
     if not string match -q -- $PNPM_HOME $PATH
