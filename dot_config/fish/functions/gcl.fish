@@ -1,4 +1,15 @@
 function gcl --description "Fuzzy find and clone a GitHub repo"
+    set -l missing
+    for bin in gh gum awk xargs
+        if not type -q $bin
+            set -a missing $bin
+        end
+    end
+    if test (count $missing) -gt 0
+        echo "gcl: missing required binaries: $missing" >&2
+        return 1
+    end
+
     set -l cache_dir (test -n "$XDG_CACHE_HOME" && echo "$XDG_CACHE_HOME" || echo "$HOME/.cache")
     set -l cache_file "$cache_dir/tv/git-clone-repos.txt"
     set -l lock_file "$cache_file.lock"
