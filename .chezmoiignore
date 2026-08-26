@@ -14,3 +14,8 @@ README.md
 {{- if ne .hosttype "tower" }}
 .local/share/applications
 {{- end }}
+
+{{- if ne .hosttype "server" }}
+.local/bin/pbcopy
+.local/bin/xdg-open
+{{- end }}
