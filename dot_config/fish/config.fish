@@ -18,15 +18,6 @@ if status is-interactive
         starship init fish | source
     end
 
-    # Start zellij or tmux if not already in a session
-    if not set -q ZELLIJ; and not set -q TMUX
-        if command -q tmux
-            tmux new-session -A -s main
-        else if command -q zellij
-            zellij attach main -c
-        end
-    end
-
     # Initialize zoxide if available
     if command -q zoxide
         zoxide init fish | source
