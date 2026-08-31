@@ -8,6 +8,7 @@ if status is-interactive
     alias lg lazygit
     alias oc opencode
     alias cc "claude --enable-auto-mode"
+    alias tm "tmux new-session -A -s main"
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
