@@ -211,6 +211,14 @@ hl.bind(mainMod .. " + P",      hl.dsp.window.pseudo())                       --
 hl.bind(mainMod .. " + T",      hl.dsp.layout("togglesplit"))                 -- dwindle
 hl.bind(mainMod .. " + F",      hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+{{- if eq .hosttype "desktop" }}
+
+-- Handy speech-to-text. Its own global shortcut registers an X11 grab, which
+-- never sees Wayland-native keypresses, so bind here and drive it via SIGUSR2.
+-- SIGUSR2 toggles, so press starts and release stops => hold-to-speak.
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("pkill -USR2 -x handy"))
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("pkill -USR2 -x handy"), { release = true })
+{{- end }}
 
 -- Move focus with arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
