@@ -2,4 +2,4 @@
 {{- $hosttype := promptChoiceOnce . "hosttype" "What type of host are you on" $choices -}}
 
 [data]
-  hosttype = {{- $hosttype | quote -}}
+  hosttype = {{- $hosttype | quote }}
