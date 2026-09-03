@@ -27,7 +27,7 @@ function gcl --description "Fuzzy find and clone a GitHub repo"
     set -l repo (cat "$cache_file" | gum filter --placeholder "Clone a repo...")
 
     if test -n "$repo"
-        gh repo clone "$repo"
+        gh repo clone "git@github.com:$repo.git"
         and cd (basename "$repo")
     end
 
