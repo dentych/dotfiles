@@ -1,0 +1,76 @@
+# Mirrors ~/.config/alacritty/alacritty.toml
+# Reload with ctrl+shift+f5 (cmd+ctrl+, on macOS); kitty has no auto-reload
+
+# Written by the `opacity` fish function
+globinclude opacity.conf
+dynamic_background_opacity yes
+
+# Lets `opacity` change live windows via `kitten @` (also works inside tmux/zellij)
+allow_remote_control socket-only
+listen_on unix:@kitty
+
+term xterm-256color
+{{- if eq .chezmoi.os "darwin" }}
+# Match Alacritty: force a valid locale so perl/locale doesn't warn over SSH
+env LANG=en_US.UTF-8
+env LC_CTYPE=en_US.UTF-8
+{{- end }}
+
+# Window
+hide_window_decorations yes
+window_padding_width 8 16
+macos_option_as_alt yes
+confirm_os_window_close 0
+tab_bar_style hidden
+
+# Font
+font_family JetBrainsMono Nerd Font
+bold_font auto
+italic_font auto
+bold_italic_font auto
+{{- if eq .chezmoi.os "linux" }}
+font_size 12.0
+{{- else }}
+font_size 14.0
+{{- end }}
+
+# Cursor
+cursor_shape beam
+cursor_blink_interval 0
+# Keep shell integration from overriding the cursor shape
+shell_integration no-cursor
+
+# Bell
+enable_audio_bell no
+command_on_bell {{ .chezmoi.homeDir }}/.local/bin/notify-bell.sh
+
+# Selection
+copy_on_select clipboard
+
+# Keyboard (ctrl+shift+c/v and cmd+c/v are kitty defaults)
+# Shift+Enter for newline (useful in Claude Code)
+map shift+enter send_text all \n
+
+## Colors: Alacritty's default palette
+## Disabled for now as I don't mind kitty colors
+# foreground #d8d8d8
+# background #181818
+# cursor none
+
+# color0  #181818
+# color1  #ac4242
+# color2  #90a959
+# color3  #f4bf75
+# color4  #6a9fb5
+# color5  #aa759f
+# color6  #75b5aa
+# color7  #d8d8d8
+
+# color8  #6b6b6b
+# color9  #c55555
+# color10 #aac474
+# color11 #feca88
+# color12 #82b8c8
+# color13 #c28cb8
+# color14 #93d3c3
+# color15 #f8f8f8

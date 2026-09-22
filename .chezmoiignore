@@ -4,6 +4,7 @@ README.md
 
 {{- if eq .hosttype "server" }}
 .config/alacritty
+.config/kitty
 .config/hypr
 .config/waybar
 .config/zellij
