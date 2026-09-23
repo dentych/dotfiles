@@ -9,6 +9,7 @@ if status is-interactive
     alias oc opencode
     alias cc "claude --enable-auto-mode"
     alias tm "tmux new-session -A -s main"
+    alias zj "zellij attach -c main"
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
