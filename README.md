@@ -6,7 +6,7 @@ This is a collection of my dotfiles, managed with [chezmoi](https://www.chezmoi.
 
 ```bash
 # Install chezmoi and apply dotfiles
-chezmoi init --apply -ssh dentych
+chezmoi init --apply --ssh dentych
 ```
 
 ## Usage
