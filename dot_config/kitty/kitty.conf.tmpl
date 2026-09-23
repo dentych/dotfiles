@@ -7,7 +7,12 @@ dynamic_background_opacity yes
 
 # Lets `opacity` change live windows via `kitten @` (also works inside tmux/zellij)
 allow_remote_control socket-only
+{{- if eq .chezmoi.os "linux" }}
 listen_on unix:@kitty
+{{- else }}
+# Abstract sockets (unix:@name) are Linux-only; kitty appends -PID to the path
+listen_on unix:/tmp/kitty
+{{- end }}
 
 term xterm-256color
 {{- if eq .chezmoi.os "darwin" }}
