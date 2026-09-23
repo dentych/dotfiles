@@ -42,6 +42,10 @@ function opacity
         case kitty
             printf 'background_opacity %s\n' $value >$file
             # Apply to running windows; the file covers new kitty instances
+            if not set -q KITTY_LISTEN_ON
+                echo "opacity: saved, but this kitty has no remote-control socket (restart kitty to apply live)" >&2
+                return 1
+            end
             kitten @ set-background-opacity --all $value
         case alacritty
             printf '[window]\nopacity = %s\n' $value >$file
