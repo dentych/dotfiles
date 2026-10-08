@@ -211,6 +211,8 @@ hl.bind(mainMod .. " + P",      hl.dsp.window.pseudo())                       --
 hl.bind(mainMod .. " + T",      hl.dsp.layout("togglesplit"))                 -- dwindle
 hl.bind(mainMod .. " + F",      hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("1password --quick-access"))
+hl.bind(mainMod .. " + ALT + P",   hl.dsp.exec_cmd("1password --toggle"))
 {{- if eq .hosttype "desktop" }}
 
 -- Handy speech-to-text. Its own global shortcut registers an X11 grab, which
