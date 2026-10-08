@@ -1,8 +1,7 @@
 if status is-interactive
-    alias c "xclip -selection clipboard"
     alias k kubectl
     alias gtc "cd ~/code"
-    alias ccd "chezmoi cd"
+    alias ccd "cd (chezmoi source-path)"
     alias yz yazi
     alias c chezmoi
     alias lg lazygit
