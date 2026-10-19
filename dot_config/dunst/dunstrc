@@ -1,0 +1,86 @@
+# Catppuccin Mocha — matches waybar "floating islands" style
+# Palette: https://github.com/catppuccin/catppuccin
+
+[global]
+    # --- Placement: top-right, tucked under the waybar pills ---
+    monitor = 0
+    follow = mouse
+    origin = top-right
+    offset = (11, 46)
+    width = (280, 380)
+    height = (0, 300)
+    notification_limit = 5
+    gap_size = 6
+    layer = overlay
+
+    # --- Look ---
+    font = JetBrainsMono Nerd Font 10
+    corner_radius = 10
+    frame_width = 1
+    frame_color = "#45475a"
+    separator_height = 0
+    separator_color = frame
+    padding = 12
+    horizontal_padding = 14
+    text_icon_padding = 12
+    transparency = 0
+
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 0
+    progress_bar_corner_radius = 3
+    progress_bar_min_width = 150
+    progress_bar_max_width = 380
+
+    # --- Text ---
+    markup = full
+    format = "<span size='11.5pt' weight='heavy' foreground='#b4befe'>%s</span>\n<span foreground='#bac2de'>%b</span>"
+    alignment = left
+    vertical_alignment = center
+    line_height = 2
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    show_age_threshold = 60
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+
+    # --- Icons ---
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    enable_recursive_icon_lookup = true
+    icon_theme = "breeze-dark, Adwaita, hicolor"
+
+    # --- Behaviour ---
+    sticky_history = yes
+    history_length = 30
+    idle_threshold = 120
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#1e1e2eee"
+    foreground = "#a6adc8"
+    frame_color = "#313244"
+    highlight = "#94e2d5"
+    format = "<span size='11.5pt' weight='heavy' foreground='#94e2d5'>%s</span>\n<span foreground='#a6adc8'>%b</span>"
+    timeout = 4
+
+[urgency_normal]
+    background = "#1e1e2eee"
+    foreground = "#cdd6f4"
+    frame_color = "#45475a"
+    highlight = "#89b4fa"
+    format = "<span size='11.5pt' weight='heavy' foreground='#b4befe'>%s</span>\n<span foreground='#bac2de'>%b</span>"
+    timeout = 6
+
+[urgency_critical]
+    background = "#1e1e2eee"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    highlight = "#f38ba8"
+    format = "<span size='11.5pt' weight='heavy' foreground='#f38ba8'>%s</span>\n<span foreground='#cdd6f4'>%b</span>"
+    timeout = 0
