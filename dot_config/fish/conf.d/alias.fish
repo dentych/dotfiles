@@ -9,6 +9,7 @@ if status is-interactive
     alias cc "claude --enable-auto-mode"
     alias tm "tmux new-session -A -s main"
     alias zj "zellij attach -c main"
+    alias zq 'setsid -f zellij delete-session --force $ZELLIJ_SESSION_NAME'
 
     # understory
     alias aws-ship-dev "node ../node-aws-env/bin/deploy.js -e development --profile understory-dev -g ../glue/development/glue.json"
