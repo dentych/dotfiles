@@ -22,3 +22,14 @@
 [includeIf "gitdir:~/code/understory/"]
 	path = ~/.gitconfig-understory
 
+[includeIf "gitdir:~/understory/"]
+	path = ~/.gitconfig-understory
+{{- with lookPath "gh" }}
+
+[credential "https://github.com"]
+	helper =
+	helper = !{{ . }} auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !{{ . }} auth git-credential
+{{- end }}
