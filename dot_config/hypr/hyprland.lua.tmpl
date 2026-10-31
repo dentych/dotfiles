@@ -150,6 +150,14 @@ hl.config({
     },
 })
 
+-- Don't flip the monitor into HDR on fullscreen: it blanks the screen and
+-- SDR video (e.g. YouTube) comes out dim and washed out.
+hl.config({
+    render = {
+        cm_auto_hdr = 0,
+    },
+})
+
 ---------------
 ---- INPUT ----
 ---------------
